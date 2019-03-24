@@ -87,13 +87,91 @@
             z-index: 9999;
             border: 1px solid #000;
         }
+
+
+        /* 新八卦 */
+        .box{
+            width: 240px;
+            height: 240px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            position: relative;
+            animation: spin 2s infinite linear;
+        }
+        .box::before,
+        .box::after{
+            content: '';
+            display: block;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 99;
+        }
+        .box::before{
+            background-color: #000;
+            -webkit-border-radius: 120px 0 0 120px;
+            -moz-border-radius: 120px 0 0 120px;
+            border-radius: 120px 0 0 120px;
+            left: 0;
+        }
+        .box::after{
+            background-color: #fff;
+            right: 0;
+            -webkit-border-radius: 0 120px 120px 0;
+            -moz-border-radius: 0 120px 120px 0;
+            border-radius: 0 120px 120px 0;
+        }
+
+        .box .left,
+        .box .right{
+            width: 50%;
+            height: 50%;
+            position: relative;
+            left: 25%;
+            border-radius: 50%;
+            z-index: 100;
+        }
+        .box .left{
+            background-color: #000;
+        }
+        .box .right{
+            background-color: #fff;
+        }
+        .box .left::before,
+        .box .right::before{
+            content: '';
+            display: block;
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            margin: -18px 0 0 -18px;
+        }
+        .box .left::before{
+            background-color: #fff;
+        }
+        .box .right::before{
+            background-color: #000;
+        }
     </style>
 </head>
 <body>
 
-    <h3 style="text-align: center;margin: 100px 0 50px 0;">CSS 八卦</h3>
+    <h3 style="text-align: center;margin: 100px 0 20px 0;">CSS 八卦</h3>
 
-    <div class="container">
+    <div style="width: 240px;height: 240px;margin: auto;">
+        <div class="box">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <!--<div class="container">
         <div class="support"></div>
         <div class="border-mask"></div>
         <div class="part1">
@@ -104,7 +182,7 @@
         </div>
 
 
-    </div>
+    </div>-->
 
     <script>
         $(function(){
