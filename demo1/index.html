@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../public/js/jquery-3.3.1.js"></script>
+    <style>
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 240px;
+            height: 240px;
+            position: relative;
+            z-index: 100;
+            border-radius: 50%;
+            background-color: #000;
+            animation: spin 2s infinite linear;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0%{
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        .support{
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background-color: #fff;
+            z-index: 100;
+        }
+        .part1, .part2{
+            width: 50%;
+            height: 50%;
+            position: relative;
+            left: 25%;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        .part1{
+            background-color: #fff;
+        }
+        .part2{
+            background-color: #000;
+        }
+        .inner1, .inner2{
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            background-color: #000;
+            left: 50%;
+            margin-left: -18px;
+            margin-top: -18px;
+        }
+        .inner1{
+            background-color: #000;
+        }
+        .inner2{
+            background-color: #fff;
+        }
+
+        .border-mask{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: transparent;
+            z-index: 9999;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h3 style="text-align: center;margin: 100px 0 50px 0;">CSS 八卦</h3>
+
+    <div class="container">
+        <div class="support"></div>
+        <div class="border-mask"></div>
+        <div class="part1">
+            <div class="inner1"></div>
+        </div>
+        <div class="part2">
+            <div class="inner2"></div>
+        </div>
+
+
+    </div>
+
+    <script>
+        $(function(){
+           $('body').css('height', $(document).height() + 'px');
+        });
+    </script>
+
+</body>
+</html>
