@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        div,img{ box-sizing: border-box; }
+        body{ margin: 0; }
+        .page{ height: 100%; display: flex; flex-direction: column; }
+        .page .top{ height: 32%; display: flex; flex-direction: column; justify-content: space-around; }
+        .page .bottom{ height: 68%; background-color: #f0eff4; display: flex; flex-direction:  column; justify-content: space-around;}
+        .box-vertical{ display: flex; flex-direction: column; align-items: center; flex: 0 0 auto;}
+        .page .top .avatar{ width: 18%; font-size: 0; margin-bottom: 8px;}
+        .page .top .avatar>img{ width: 33.333333333%; appearance: none; -webkit-appearance: none; padding-right: 1px; padding-bottom: 1px;}
+        .page .top .name{ font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+        .page .top .count{ color: #777; }
+        .page .bottom .inviter{ font-size: 18px; color: #444; padding-bottom: 35px; }
+        .page .bottom .btn{ display: inline-block; background-color: #05be01; font-size: 18px; padding: 10px 65px; color: #fff; border-radius: 5px; text-align: center; }
+        .page .bottom .tips{ padding: 0 25px; color: #aaa; }
+        .page .bottom .tips .text{ margin-bottom: 5px; margin-top: 0; line-height: 1.8;}
+        .box-full{ height: 100%; justify-content: space-around;}
+        .text{ display: flex; }
+        .text .order{ display: inline-block; width: 10%; }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="top">
+            <div class="box-vertical">
+                <div class="avatar">
+                    <img src="images/1.jpg">
+                    <img src="images/2.jpg">
+                    <img src="images/3.jpg">
+                    <img src="images/4.jpg">
+                    <img src="images/5.jpg">
+                    <img src="images/6.jpg">
+                    <img src="images/7.jpg">
+                    <img src="images/8.jpg">
+                    <img src="images/9.jpg">
+                </div>
+                <div class="name">
+                    <span id="city">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>同城小仙女群
+                </div>
+                <div id="count" class="count">人</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="box-vertical box-full">
+                <div class="box-vertical">
+                    <div class="inviter">放飞自我 邀请你加入群聊</div>
+                    <div class="btn">加入群聊</div>
+                </div>
+                
+                <div class="tips">
+                    <div class="text">
+                        <div class="order">1. </div>
+                        你和群里其他人都不是朋友关系，请注意隐私安全。
+                    </div>
+                    <div class="text">
+                        <div class="order">2. </div>
+                        该群聊人数较多，为减少心消息给你带来的打扰，建议谨慎加入。
+                    </div>
+                    <div class="text">
+                        <div class="order">3. </div>
+                        你需要实名验证后才能接受邀请，可绑定银行卡进行验证。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=0MRAna157NSriBp8U5wwx52z8Gtlv0rj"></script>
+    <script>
+        new BMap.LocalCity().get(function(r){
+            var city = r.name;
+            if(city && city.charAt(city.length - 1) == '市'){
+                city = city.substring(0, city.length - 1);
+            }
+            document.querySelector('#city').innerHTML = city || '北京';
+        });
+        document.querySelector('#count').innerHTML = rand(300, 600) + '人';
+
+        function rand(min, max){
+            var r = Math.random();
+            return  min + Math.round((max - min) * r);
+        }
+    </script>
+    
+    
+</body>
+</html>
