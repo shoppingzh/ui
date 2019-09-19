@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .card{ position: relative; border-radius: 5px; border: 1px solid #eee; padding: 5px; box-sizing: border-box; overflow: hidden; }
+        .card img{ width: 100%; }
+
+        .flip{ position: relative; width: 350px; height: 218px; }
+        .flip .front, .flip .back{ position: absolute; left: 0; right: 0; top: 0; bottom: 0; transition: all 1s; backface-visibility: hidden; }
+        .flip .back{ transform: rotateY(-180deg); }
+        .flip.reverse .front{ transform: rotateY(-180deg);  }
+        .flip.reverse .back{ transform: rotateY(0deg);  }
+
+        .card1,.card2{ width: 350px; height: 218px; }
+        .card1{ background: url('images/1.jpg') no-repeat; background-size: 100% 100%; }
+        .card2{ background: url('images/2.jpg') no-repeat; background-size: 100% 100%; }
+
+        .wrap{ margin: 10px auto; }
+    </style>
+</head>
+<body>
+
+    <!-- <div class="card flip">
+        <div class="front">
+            <img src="images/1.jpg">
+        </div>
+        <div class="back">
+            <img src="images/2.jpg">
+        </div>
+    </div> -->
+
+    <div class="flip wrap">
+        <div class="front">
+            <div class="card card1">
+                <p style="color: cyan;">桃花/美人</p>
+            </div>
+        </div>
+        <div class="back">
+            <div class="card card2">
+                <p>小熊/美女</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../public/js/jquery-3.3.1.js"></script>
+    <script>
+        $('.flip').click(function(){
+            $(this).toggleClass('reverse');
+        })
+    </script>
+    
+</body>
+</html>
