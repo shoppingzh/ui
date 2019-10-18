@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes ani-loading {
+            0% { transform: scaleY(1); -webkit-transform: scaleY(1); }
+            50% { transform: scaleY(.5); -webkit-transform: scaleY(.5); }
+            100% { transform: scaleY(1); -webkit-transform: scaleY(1); }
+        }
+        .living{ position: relative; }
+        .living>div{ position: absolute;  top: 0; bottom: 0; width: 25%; height: 0; padding-top: 100%; display: block; box-sizing: border-box; background-color: lightgreen; animation: ani-loading 600ms infinite linear; -webkit-animation: ani-loading 600ms infinite linear; }
+        .living>div:first-child{ left: 0;  }
+        .living>div:nth-child(2){ left: 37.5%; animation-delay: 200ms; }
+        .living>div:last-child{ left: 75%; animation-delay: 400ms; }
+
+
+        .living-list { display: flex; flex-wrap: wrap; }
+        .living-list .living{ margin-left: 10px; height: 200px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="living-list">
+        <div class="living" style="width: 10px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 20px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 30px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 40px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 50px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 60px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 80px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 110px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 150px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="living" style="width: 200px;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+   
+
+    
+    
+</body>
+</html>
