@@ -12,3 +12,6 @@
 
 - ### 首页展位效果
 ![placeholder](images/4.jpg)
+
+- ### 365 Dots
+![336 Dots](images/5.jpg)

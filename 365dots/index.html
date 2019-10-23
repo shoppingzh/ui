@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @media (min-width: 600px) {
+            body{ padding: 15px 15%; }
+        }
+        @keyframes ani-blingbling {
+            0% { opacity: 1; }
+            50% { opacity: .3; }
+            100% { opacity: 1; }
+        }
+        body{ background-color: rgba(0, 0, 0, .9); }
+        .box{ display: flex; align-items: center; height: 100%; }
+        .box .box-main{ width: 100%; }
+        /* 头 */
+        .profile{ font-size: 18px; display: flex; justify-content: space-between; padding: 0 10px 30px; }
+        .profile .year{ color: #fff; }
+        .profile .detail{ color: rgba(166, 255, 0, 1); }
+        .profile .percent{ color: rgba(251, 16, 78, 1); }
+        /* dot */
+        .dot-line { display: flex; justify-content: space-evenly; margin-bottom: 5px; }
+        .dot-line .dot{ width: 8px; height: 8px; border-radius: 50%; background-color: rgba(0, 246, 234, 1); }
+        .dot-line .dot.today{ animation: ani-blingbling 1s linear infinite; }
+        .dot-line .dot.future{ opacity: .15; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="box-main">
+            <div class="profile">
+                <div class="year"></div>
+                <div class="detail"></div>
+                <div class="percent"></div>
+            </div>
+            <div class="dots"></div>
+        </div>
+    </div>
+
+    <script src="../public/js/jquery-3.3.1.js"></script>
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var arr = getMonthDays();
+
+        var days = 0;
+        var currDays = getCurrDays();
+        arr.forEach(function(monthDay){
+            days += monthDay;
+        })
+
+        $('.profile .year').text(year);
+        $('.profile .detail').text(currDays + '/' + days);
+        $('.profile .percent').text(Math.round(currDays / days * 100) + '%');
+
+
+        var $dots = $('.dots');
+        
+        $dots.empty();
+        arr.forEach(function(days, index){
+            var $line = $('<div class="dot-line">');
+            for(var i = 1; i <= days; i++){
+                var $dot = $('<div class="dot">');
+                    
+                if(month == index && i == day){
+                    $dot.addClass('today');
+                }else if(index > month || (index == month && i > day)){
+                    $dot.addClass('future');
+                }
+                $dot.appendTo($line);
+            }
+            $line.appendTo($dots);
+        })
+
+        function getMonthDays(){
+            var arr = [];
+            var now = new Date();
+            for(var i = 1;i <= 12; i++){
+                var monthDay = new Date(now.getFullYear(), i, 0).getDate();
+                arr.push(monthDay);
+            }
+            return arr;
+        }
+
+        function getCurrDays(){
+            var now = new Date();
+            var month = now.getMonth();
+            var days = 0;
+            for(var i = 1; i <= month + 1; i++){
+                var monthDay = new Date(now.getFullYear(), i, 0).getDate();
+                days += (i == month) ? now.getDate() : monthDay;
+            }
+            return days - 1;
+        }
+    </script>
+    
+</body>
+</html>
