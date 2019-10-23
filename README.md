@@ -1,5 +1,9 @@
 # ui
 
+- ### 365 Dots
+> 365 Dots是iOS的一个应用，用来展示当前一年走过的时间。
+
+![336 Dots](images/5.jpg)
 
 - ### css八卦
 ![八卦](images/2.gif)
@@ -13,5 +17,3 @@
 - ### 首页展位效果
 ![placeholder](images/4.jpg)
 
-- ### 365 Dots
-![336 Dots](images/5.jpg)
