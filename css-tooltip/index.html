@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        [data-tooltip]{ position: relative; }
+        [data-tooltip]:hover:before{ content: ""; display: block; border: 5px solid transparent; border-bottom-color: #313131; position: absolute; top: 120%; left: 50%; transform: translate(0, -10px); }
+        [data-tooltip]:hover:after{ content: attr(data-tooltip); position: absolute; top: 120%; left: -50%; background-color: #313131; color: #fff; padding: 5px 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-radius: 5px; transition: opacity .5s; -webkit-transition: opacity .5s; }
+    </style>
+</head>
+<body>
+
+    <h3 style="text-align: center;">JavaScript</h3>
+    <div style="padding: 20px;">
+            JavaScript ( JS ) 是一种具有 <a href="javascript:;" data-tooltip="俗称：函数式编程">函数优先</a> 的轻量级，解释型或即时编译型的编程语言。
+            虽然它是作为开发Web 页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，
+            例如 Node.js、 Apache CouchDB 和 Adobe Acrobat。JavaScript 是一种基于原型编程、多范式的动态脚本语言，
+            并且支持面向对象、命令式和声明式（如函数式编程）风格。了解更多 JavaScript。
+    </div>
+    
+</body>
+</html>
