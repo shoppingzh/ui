@@ -20,3 +20,6 @@
 - ### 纯css实现tooltip
 ![tooltip](images/tooltip.gif)
 
+- ### css实现的加载动画
+![loading](images/loading.gif)
+
