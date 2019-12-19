@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* body{ background-image: linear-gradient(117deg,#3c2747,#222634 98%,#252433); color: #fff; } */
+        @keyframes loading {
+            0%{ transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+            100%{ transform: rotate(360deg); -webkit-transform: rotate(360deg); }
+        }
+        .loading{ display: inline-block; box-sizing: border-box; width: 20px; height: 20px;  border: 3px solid #efefef; border-radius: 50%; border-left-color: rgb(255, 29, 94); animation: loading 1s infinite linear; }
+        .loading.large{ width: 40px; height: 40px; border-width: 5px; }
+
+        /* spinner */
+        @keyframes orbit1-ani {
+            0% { transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
+            100% { transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); }
+        }
+        @keyframes orbit2-ani {
+            0% { transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
+            100% { transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); }
+        }
+        @keyframes orbit3-ani {
+            0% { transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
+            100% { transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); }
+        }
+        .spinner{ width: 50px; height: 50px; position: relative; perspective: 800px; }
+        .spinner .orbit{ position: absolute; width: 100%; height: 100%; border-radius: 50%; border-width: 3px; border-color: rgb(255, 29, 94); }
+        .spinner .orbit:nth-child(1){ border-bottom-style: solid; animation: orbit1-ani 1s infinite linear; -webkit-animation: orbit1-ani 1s infinite linear; }
+        .spinner .orbit:nth-child(2){ border-right-style: solid; animation: orbit2-ani 1s infinite linear; -webkit-animation: orbit2-ani 1s infinite linear; }
+        .spinner .orbit:nth-child(3){ border-top-style: solid; animation: orbit3-ani 1s infinite linear; -webkit-animation: orbit3-ani 1s infinite linear; }
+    </style>
+</head>
+<body>
+
+    <h3>样式一</h3>
+    <div class="loading large"></div>
+
+    <h3>样式二</h3>
+    <div class="spinner">
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+    </div>
+
+
+    
+</body>
+</html>
