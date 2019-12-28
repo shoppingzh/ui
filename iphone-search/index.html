@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body{ background-color: rgba(0, 0, 0, .75);  margin: 0; }
+
+        .phone{ height: 100%; transition: all .3s; position: relative; transform: translateY(-85px); }
+        .phone .top{ margin-bottom: 45px; }
+
+        .search-box{ display: flex; align-items: center; color: #ccc; background-color: rgba(0, 0, 0, 0); padding: 18px 6px 5px; font-size: 12px; }
+        .search-box input{ padding: 5px; border: 1px solid transparent; border-radius: 300px; flex: 1; box-sizing: border-box; background-color: rgba(255, 255, 255, .35); }
+        .search-box .btn{ padding-left: 10px; }
+
+        .box{ display: flex; flex-wrap: wrap;  }
+        .box:after{ content: ''; clear: both; }
+        .box .item{  margin: 10px; }
+
+        .app{ text-align: center; color: #ddd; font-size: 12px;  display: flex; flex-direction: column; align-items: center;  }
+        .app .icon{ width: 50px; height: 50px; background-color: #f3f3f7; border-radius: 8px; margin-bottom: 5px; box-sizing: border-box; background-color: #fff; background-size: contain; background-repeat: no-repeat; }
+
+        .app.wx .icon{ background-image: url('images/weixin.png'); }
+        .app.qq .icon{ background-image: url('images/QQ.png'); }
+        .app.chrome .icon{ background-image: url('images/Chrome.png'); }
+        .app.appstore .icon{ background-image: url('images/appstore.png'); }
+        .app.douyin .icon{ background-image: url('images/douyin.png'); }
+        .app.qq-music .icon{ background-image: url('images/qq_music.png'); }
+        .app.zhihu .icon{ background-image: url('images/zhihu.png'); }
+        .app.xmly .icon{ background-image: url('images/xmly.png'); }
+        .app.tb .icon{ background-image: url('images/tb.png'); }
+        .app.jd .icon{ background-image: url('images/jd.png'); }
+        .app.dangdang .icon{ background-image: url('images/dangdang.png'); }
+    </style>
+</head>
+<body>
+
+    <div class="phone">
+        <div class="top">
+            <div class="search-box">
+                <input type="search" placeholder="搜索您感兴趣的内容..">
+                <div class="btn">搜索</div>
+            </div>
+        </div>
+        <div class="desktop">
+            <div class="box">
+                <div class="item">
+                    <div class="app wx">
+                        <div class="icon"></div>
+                        <div class="title">微信</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app qq">
+                        <div class="icon"></div>
+                        <div class="title">QQ</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app qq-music">
+                        <div class="icon"></div>
+                        <div class="title">QQ音乐</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app zhihu">
+                        <div class="icon"></div>
+                        <div class="title">知乎</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app xmly">
+                        <div class="icon"></div>
+                        <div class="title">喜马拉雅</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app tb">
+                        <div class="icon"></div>
+                        <div class="title">淘宝</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app jd">
+                        <div class="icon"></div>
+                        <div class="title">京东</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="app dangdang">
+                        <div class="icon"></div>
+                        <div class="title">当当</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="jquery-3.4.1.js"></script>
+    <script src="hammer.min.js"></script>
+    <script>
+        var $phone = $('.phone');
+        var hm = new Hammer.Manager($phone[0], {});
+
+        var blur = 15; // 模糊阈值
+
+        hm.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
+
+        hm.on('pan', onPan);
+        hm.on('panend', onPan);
+        hm.on('pancancel', onPan);
+
+        function onPan(e){
+            var y = e.deltaY;
+            if(Math.abs(y) > 85){
+                return;
+            }
+            
+            var moveY = y > 0 ? (y - 85) : y;
+
+            $phone.css({
+                transform: `translateY(${moveY}px)`
+            })
+
+            // 焦点转移
+            $phone.find('.desktop').css({
+                filter: `blur(${Math.floor((85 + moveY) / (85 / blur))}px)`
+            })
+
+            
+            // 滚动结束
+            if(e.type == 'panend' || e.type == 'pancancel'){
+                console.log(e);
+                console.log('滚动结束，搜索框自动滚动，模糊自动');
+                
+                $phone.css({
+                    transform: `translateY(${y > 0 ? 0 : -85}px)`,
+                    filter: `blur(${y > 0 ? blur : 0}px)`
+                })
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
