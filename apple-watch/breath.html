@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .watch{ background-color: rgba(0, 0, 0, 1); border-radius: 15px; box-shadow: 1px 1px 2px 5px rgba(0, 0,0, .75); width: 200px; height: 200px; position: fixed; left: 50%; margin-left: -100px; top: 50%; margin-top: -100px; }
+
+    .breath{ display: inline-block; position: absolute; width: 80px; height: 80px; left: 50%; margin-left: -40px; top: 50%; margin-top: -80px; transition: all 3s; }
+    .breath__item{ border-radius: 50%; background-color: rgba(0, 255, 255, .35); position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-origin: 50% 100%; transition: all 3s; }
+    .breath__item:nth-child(1) { transform: rotate(30deg); }
+    .breath__item:nth-child(2) { transform: rotate(90deg); }
+    .breath__item:nth-child(3) { transform: rotate(150deg); }
+    .breath__item:nth-child(4) { transform: rotate(210deg); }
+    .breath__item:nth-child(5) { transform: rotate(270deg); }
+    .breath__item:nth-child(6) { transform: rotate(330deg); }
+
+    @keyframes ani-breathing {
+      0% { transform: scale(1); }
+      50% { width: 10px; height: 10px; margin-left: -5px; margin-top: -10px; }
+      100% { transform: scale(1); }
+    }
+    @keyframes ani-item1 {
+      0%{ transform: rotate(30deg); }
+      50%{ transform: rotate(-150deg); }
+      0%{ transform: rotate(30deg); }
+    }
+    @keyframes ani-item2 {
+      0%{ transform: rotate(90deg); }
+      50%{ transform: rotate(-90deg); }
+      0%{ transform: rotate(90deg); }
+    }
+    @keyframes ani-item3 {
+      0%{ transform: rotate(150deg); }
+      50%{ transform: rotate(-30deg); }
+      0%{ transform: rotate(150deg); }
+    }
+    @keyframes ani-item4 {
+      0%{ transform: rotate(210deg); }
+      50%{ transform: rotate(30deg); }
+      0%{ transform: rotate(210deg); }
+    }
+    @keyframes ani-item5 {
+      0%{ transform: rotate(270deg); }
+      50%{ transform: rotate(90deg); }
+      0%{ transform: rotate(270deg); }
+    }
+    @keyframes ani-item6 {
+      0%{ transform: rotate(330deg); }
+      50%{ transform: rotate(150deg); }
+      0%{ transform: rotate(330deg); }
+    }
+    .breathing{ animation: ani-breathing 9.5s infinite ease-in-out; }
+    .breathing .breath__item:nth-child(1) { animation: ani-item1 9.5s infinite ease-in-out; }
+    .breathing .breath__item:nth-child(2) { animation: ani-item2 9.5s infinite ease-in-out; }
+    .breathing .breath__item:nth-child(3) { animation: ani-item3 9.5s infinite ease-in-out; }
+    .breathing .breath__item:nth-child(4) { animation: ani-item4 9.5s infinite ease-in-out; }
+    .breathing .breath__item:nth-child(5) { animation: ani-item5 9.5s infinite ease-in-out; }
+    .breathing .breath__item:nth-child(6) { animation: ani-item6 9.5s infinite ease-in-out; }
+  </style>
+</head>
+<body style="background-color: #f3f4f7;">
+
+  <div class="watch">
+    <div class="breath breathing">
+      <div class="breath__item"></div>
+      <div class="breath__item"></div>
+      <div class="breath__item"></div>
+      <div class="breath__item"></div>
+      <div class="breath__item"></div>
+      <div class="breath__item"></div>
+    </div>
+  </div>
+
+
+</body>
+</html>

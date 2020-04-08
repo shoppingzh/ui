@@ -1,5 +1,8 @@
 # ui
 
+- ### apple watch 呼吸应用
+![apple watch breath](images/apple-watch-breath.gif)
+
 - ### 365 Dots
 > 365 Dots是iOS的一个应用，用来展示当前一年走过的时间。
 
