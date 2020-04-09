@@ -1,0 +1,12 @@
+.watch{
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 5px rgba(0, 0,0, .75);
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: 50%;
+    margin-left: -100px;
+    top: 50%;
+    margin-top: -100px;
+}

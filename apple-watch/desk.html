@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="i.css">
+    <style>
+        .watch--big{ width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; border-radius: 30px; }
+        .wc-app{ width: 30px; height: 30px; border-radius: 50%; background-color: #eee; border: 1px solid #fff; animation: ani-opacity 5s infinite linear; position: absolute; left: 50%; margin-left: -15px; margin-top: -15px; }
+        @keyframes ani-opacity {
+            0%{ opacity: 1; }
+            50%{ opacity: 0.65; }
+            100%{ opacity: 1; }
+        }
+    </style>
+
+</head>
+<body style="background-color: #f3f4f7;">
+
+    <div class="watch watch--big">
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+    </div>
+
+    <script src="i.js"></script>
+    <script>
+        var apps = document.querySelectorAll('.wc-app')
+        var watch = document.querySelector('.watch')
+        var ww = watch.offsetWidth, wh = watch.offsetHeight
+        var center = { x: ww / 2, y : wh / 2 }
+        
+        $(apps).each(function(el, index) {
+            var groupInfo = findGroupInfo(index)
+            var height = this.offsetHeight;
+            var group = groupInfo.index
+            var num = groupInfo.offset
+            var radius = group * height + (group * 6) // 加了一个6像素的偏移量
+            var degree = group == 0 ? 0 : 360 / (group * 6)
+
+            // 获取旋转过后的坐标，加上表盘的偏移量，将其绘制在中心
+            var pos = getRotatePosition(radius, degree * num)
+            this.style.left = (pos.x + center.x) + 'px'
+            this.style.top = (pos.y + center.y) + 'px'
+        })
+
+        // 给app配上随机颜色
+        $(apps).each(function() {
+            var r = Math.random() * 255;
+            var g = Math.random() * 255;
+            var b = Math.random() * 255;
+            var a = Math.floor(Math.random() + 0.5);
+            this.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
+        })
+
+        // 反向递归查找当前组
+        function findGroupInfo (index) {
+            if (index <= 0) {
+                return { index: 0, offset: 0 }
+            }
+            var n = 0, m = 0;
+
+            function doFind() {
+                if (n >= index) {
+                    return { index: m / 6, offset: index - n + m - 1 }
+                }
+                m += 6;
+                n += m;
+                return doFind()
+            }
+
+            return doFind()
+        }
+
+        console.log(Math.cos(60))
+        // 计算点绕线旋转某个角度后的坐标
+        function getRotatePosition(r, deg) {
+            var radian = 2 * Math.PI / 360;
+            return {
+                x: r * Math.cos(radian * deg),
+                y: r * Math.sin(radian * deg)
+            }
+        }
+
+    </script>
+    
+    
+</body>
+</html>
