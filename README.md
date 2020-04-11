@@ -24,7 +24,7 @@
 ![336 Dots](images/5.jpg)
 
 #### css八卦
-![八卦](images/2.gif)
+![八卦](images/gossip.gif)
 
 #### card flip
 ![card flip](images/1.gif)
