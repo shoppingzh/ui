@@ -10,6 +10,9 @@
 #### apple watch 表盘
 ![apple watch desk](images/apple-watch-desk.png)
 
+#### apple watch 待办事项
+![apple watch todo](images/apple-watch-todo.png)
+
 #### apple watch 呼吸
 ![apple watch breath](images/apple-watch-breath.gif)
 

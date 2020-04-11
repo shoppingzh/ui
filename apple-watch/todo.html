@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="i.css">
+  <title>Todo</title>
+  <style>
+    .todo__wrapper{
+        padding: 8px 5px;
+        margin-top: 5px;
+        height: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watch watch--big">
+    <div class="todo__wrapper">
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">购物</div>
+          <div class="todo__time">今天</div>
+        </div>
+      </div>
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink  todo__radio--checked" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">打扫卫生</div>
+          <div class="todo__time">今天</div>
+        </div>
+      </div>
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">写作</div>
+          <div class="todo__time">今天</div>
+        </div>
+      </div>
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">给金毛洗澡</div>
+          <div class="todo__time">昨天</div>
+        </div>
+      </div>
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">看电影</div>
+          <div class="todo__time">昨天</div>
+        </div>
+      </div>
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">阅读</div>
+          <div class="todo__time">3天前</div>
+        </div>
+      </div>
+      <div class="todo__item">
+        <input class="todo__radio todo__radio--pink" type="radio">
+        <div class="todo__item__inner">
+          <div class="todo__title">爬山</div>
+          <div class="todo__time">1周前</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="i.js"></script>
+
+  <script>
+    var items = document.querySelectorAll('.todo__item')
+    
+    items.forEach(function(el) {
+      el.addEventListener('click', function() {
+        var radio = this.querySelector('.todo__radio')
+        $(radio).toggleClass('todo__radio--checked')
+      }, false)
+    })
+  </script>
+  
+</body>
+</html>
