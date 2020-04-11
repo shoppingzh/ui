@@ -14,7 +14,7 @@
 ![apple watch todo](images/apple-watch-todo.png)
 
 #### apple watch 呼吸
-![apple watch breath](images/apple-watch-breath.gif)
+![apple watch breath](images/apple-watch-breath2.gif)
 
 ## 其它
 
