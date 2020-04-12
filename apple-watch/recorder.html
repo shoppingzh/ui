@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple watch recorder</title>
+  <link rel="stylesheet" href="i.css">
+  <style>
+    .recorder {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      position: relative;
+      cursor: pointer;
+    }
+    .recorder:after{
+      content: '';
+      display: inline-block;
+      width: 90%;
+      height: 90%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -45%;
+      margin-top: -45%;
+      border-radius: 50%;
+      background-color: #ff3b30;
+      transition: all .3s ease-in-out;
+      -webkit-transition: all .3s ease-in-out;
+    }
+    .recorder--active:after{
+      width: 50%;
+      height: 50%;
+      margin-left: -25%;
+      margin-top: -25%;
+      border-radius: 5px;
+      transition: all .3s ease-in-out;
+      -webkit-transition: all .3s ease-in-out;
+    }
+
+    .app-recorder{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 10%;
+      margin-top: 5%;
+    }
+    .app-recorder__title{
+      color: #fff;
+      margin-top: 5px;
+    }
+    .app-recorder__tips{
+      color: #ccc;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="watch">
+    <div class="app-recorder">
+      <div class="recorder"></div>
+      <div class="app-recorder__title">轻点录音。</div>
+      <div class="app-recorder__tips">录音同时将会存在iPhone，iPad和Mac上的“语音备忘录”中。</div>
+    </div>
+  </div>
+  
+  <script src="i.js"></script>
+  <script>
+    var el = document.querySelector('.recorder')
+    el.addEventListener('click', function() {
+      $(this).toggleClass('recorder--active')
+    }, false)
+  </script>
+</body>
+</html>

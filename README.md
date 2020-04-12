@@ -16,6 +16,9 @@
 #### apple watch 呼吸
 ![apple watch breath](images/apple-watch-breath2.gif)
 
+#### apple watch 语音备忘录
+![apple watch recorder](images/apple-watch-recorder.gif)
+
 ## 其它
 
 #### 365 Dots
