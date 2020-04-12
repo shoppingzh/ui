@@ -10,6 +10,16 @@
  * 黑色 #000000
 */
 
+@font-face {
+    font-family: FangzhengRZY;
+    src: url("fonts/FZRuiZYJW_Da.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto-Bold.ttf");
+}
+
 /* Apple watch */
 .watch{
     background-color: rgba(0, 0, 0, 1);

@@ -5,31 +5,29 @@
   <link rel="stylesheet" href="i.css">
   <title>apple watch dial 1</title>
   <style>
-    @font-face {
-      font-family: Roboto;
-      src: url("fonts/Roboto-Bold.ttf");
-    }
     .dial-style1{
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       padding: 5px;
       font-weight: bolder;
-      font-family: Roboto;
+      font-family: FangzhengRZY;
       user-select: none;
     }
     .dial-style1 .hour{
       color: #ff6748;
-      font-size: 75px;
+      font-size: 65px;
       transform: scaleX(2) scaleY(1.5);
       transform-origin: 100%;
+      margin-top: 8px;
     }
     .dial-style1 .minute{
       color: #f4aca5;
-      font-size: 80px;
+      font-size: 70px;
       transform: scaleX(2);
       transform-origin: 100%;
       transform: scaleX(2) scaleY(1.5);
+      margin-top: 18px;
     }
   </style>
 </head>
@@ -37,21 +35,30 @@
 
   <div class="watch">
     <div class="dial dial-style1">
-      <div class="hour">16</div>
-      <div class="minute">42</div>
+      <div class="hour">-</div>
+      <div class="minute">-</div>
     </div>
   </div>
   
   <script src="i.js"></script>
   <script>
-    var now = new Date()
-    var hours = now.getHours()
-    var minutes = now.getMinutes()
-    var hourEl = document.querySelector('.hour')
-    var minuteEl = document.querySelector('.minute')
 
-    $(hourEl).text(hours < 10 ? '0' + hours : hours)
-    $(minuteEl).text(minutes < 10 ? '0' + minutes : minutes)
+    function renderTime() {
+      var now = new Date()
+      var hours = now.getHours()
+      var minutes = now.getMinutes()
+      var hourEl = document.querySelector('.hour')
+      var minuteEl = document.querySelector('.minute')
+  
+      $(hourEl).text(hours < 10 ? '0' + hours : hours)
+      $(minuteEl).text(minutes < 10 ? '0' + minutes : minutes)
+    }
+    
+    renderTime()
+
+    setInterval(function() {
+      renderTime()
+    }, 10000)
   </script>
 </body>
 </html>
