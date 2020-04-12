@@ -73,6 +73,11 @@
         })
     }
 
+    Query.prototype.text = function(text) {
+        return this.each(function() {
+            this.innerText = text
+        })
+    }
 
 
     window.$ = function(els) {

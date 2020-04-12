@@ -7,7 +7,10 @@
 
 ## Apple watch系列
 
-#### apple watch 表盘
+#### apple watch 表盘一
+![apple watch dail 1](images/apple-watch-dail-1.png)
+
+#### apple watch 应用列表
 ![apple watch desk](images/apple-watch-desk.png)
 
 #### apple watch 待办事项
