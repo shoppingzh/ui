@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time point test</title>
+    <link rel="stylesheet" href="i.css">
+    <style>
+        .dial{
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, .9);
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dial">
+        <div class="point-line"></div>
+    </div>
+
+    <script src="i.js"></script>
+    <script>
+        var WatchDial = new WatchDial('.dial', {
+            offset: 5
+        });
+        console.log(WatchDial)
+    </script>
+    
+</body>
+</html>

@@ -78,6 +78,36 @@
     box-shadow: 0 0 2px 1px #ccc;
 }
 
+/* 表盘刻度线 */
+.point-line{
+    position: absolute;
+    width: 10px;
+    height: 1px;
+    margin-left: -5px;
+    margin-top: -0.5px;
+    background-color: #fff;
+    transform-origin: 50% 50%;
+    border-radius: 1000px;
+}
+.point-line--break {
+    height: 2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.point-line--break:after{
+    content: '';
+    display: inline-block;
+    width: 50%;
+    height: 2px;
+    background-color: inherit;
+    position: absolute;
+    left: -49%;
+    top: 50%;
+    margin-top: -1px;
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+}
+
 /* app - todo */
 .todo__radio{
     appearance: none;
