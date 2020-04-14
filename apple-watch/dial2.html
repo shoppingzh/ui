@@ -77,18 +77,12 @@
       left: -8%;
       background-color: inherit;
     }
-
-    .dials{
-
-    }
-    
   </style>
 </head>
 <body>
 
   <div class="watch">
     <div class="dial dial-style2">
-      <div class="dials"></div>
       <div class="pointers">
         <div class="hour-pointer"></div>
         <div class="minute-pointer"></div>
@@ -103,11 +97,6 @@
     var hourPointer = document.querySelector('.hour-pointer')
     var minutePointer = document.querySelector('.minute-pointer')
     var secondPointer = document.querySelector('.second-pointer')
-
-    // 表盘
-    new WatchDial('.dials', {
-      color: '#666'
-    })
 
     render()
     setInterval(render, 1000)

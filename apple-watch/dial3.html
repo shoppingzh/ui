@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="i.css">
+    <title>Apple watch dial 3</title>
+    <style>
+        .dial-style3{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .dial__back{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .dial__front{
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .lines{
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .lines .line{
+            width: 10%;
+            height: 100%;
+        }
+        .line--red{
+            background: linear-gradient(180deg, #000, 15%, #e20023 50%, 70%, #000);
+        }
+        .line--orange{
+            background: linear-gradient(180deg, #000, 15%, #ff4b1f 50%, 70%, #000);
+        }
+        .line--yellow{
+            background: linear-gradient(180deg, #000, 15%, #ffae17 50%, 70%, #000);
+        }
+        .line--green{
+            background: linear-gradient(180deg, #000, 15%, #6aba2e 50%, 70%, #000);
+        }
+        .line--blue{
+            background: linear-gradient(180deg, #000, 15%, #26a7f5 50%, 70%, #000);
+        }
+        .line--purple{
+            background: linear-gradient(180deg, #000, 15%, #ac03a6 50%, 70%, #000);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="watch">
+        <div class="dial dial-style3">
+            <div class="dial__back">
+                <div class="lines">
+                    <div class="line line--red"></div>
+                    <div class="line line--orange"></div>
+                    <div class="line line--yellow"></div>
+                    <div class="line line--green"></div>
+                    <div class="line line--blue"></div>
+                    <div class="line line--purple"></div>
+                </div>
+            </div>
+            <div class="dial__front">
+            </div>
+        </div>
+    </div>
+
+    <script src="i.js"></script>
+    <script>
+    </script>
+
+    
+</body>
+</html>
