@@ -23,8 +23,8 @@
 /* Apple watch */
 .watch{
     background-color: rgba(0, 0, 0, 1);
-    border-radius: 15px;
-    box-shadow: 1px 1px 2px 5px rgba(0, 0,0, .75);
+    border-radius: 25px;
+    box-shadow: 0 0 2px 5px rgba(0, 0, 0, .75), 1px 1px 3px 7px rgba(128, 128, 128, .25);
     width: 200px;
     height: 200px;
     position: fixed;
@@ -62,7 +62,7 @@
     top: 50%;
     transform-origin: 0 50%;
     box-sizing: border-box;
-} 
+}
 .hour-pointer:before,
 .hour-pointer:after,
 .minute-pointer:before,
@@ -75,7 +75,6 @@
     background-color: rgba(255, 255, 255, .95);
     border-radius: 1000px;
     box-sizing: border-box;
-    box-shadow: 0 0 2px 1px #ccc;
 }
 
 /* 表盘刻度线 */
