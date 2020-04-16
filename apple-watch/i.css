@@ -167,6 +167,10 @@
     user-select: none;
 }
 
+.todo__item.done{
+	filter: brightness(0.7);
+}
+
 .todo__item:hover{
     background-color: rgba(60, 60, 60, .5);
 }
