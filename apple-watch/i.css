@@ -20,6 +20,10 @@
     src: url("fonts/Roboto-Bold.ttf");
 }
 
+html{
+    font-family: Roboto;
+}
+
 /* Apple watch */
 .watch{
     background-color: rgba(0, 0, 0, 1);

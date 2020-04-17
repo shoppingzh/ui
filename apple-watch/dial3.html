@@ -27,10 +27,13 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            padding: 8px 5px;
+            box-sizing: border-box;
         }
 
+        /* 彩虹线条 */
         .lines{
-            width: 80%;
+            width: 65%;
             height: 100%;
             margin: auto;
             display: flex;
@@ -39,26 +42,87 @@
             align-items: center;
         }
         .lines .line{
-            width: 10%;
-            height: 100%;
+            width: 8%;
+            height: 90%;
+            position: relative;
+        }
+        .lines .line:before, .lines .line:after{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 25px;
+        }
+        .lines .line:before{
+            top: 0;
+        }
+        .lines .line:after{
+            bottom: 0;
         }
         .line--red{
-            background: linear-gradient(180deg, #000, 15%, #e20023 50%, 70%, #000);
+            background-color: #e20023; 
+        }
+        .line--red:before{
+            background: linear-gradient(0deg, #e20023, #000)
+        }
+        .line--red:after{
+            background: linear-gradient(180deg, #e20023, #000)
         }
         .line--orange{
-            background: linear-gradient(180deg, #000, 15%, #ff4b1f 50%, 70%, #000);
+            background-color: #ff4b1f;
+        }
+        .line--orange:before{
+            background: linear-gradient(0deg, #ff4b1f, #000)
+        }
+        .line--orange:after{
+            background: linear-gradient(180deg, #ff4b1f, #000)
         }
         .line--yellow{
-            background: linear-gradient(180deg, #000, 15%, #ffae17 50%, 70%, #000);
+            background-color: #ffae17;
+        }
+        .line--yellow:before{
+            background: linear-gradient(0deg, #ffae17, #000)
+        }
+        .line--yellow:after{
+            background: linear-gradient(180deg, #ffae17, #000)
         }
         .line--green{
-            background: linear-gradient(180deg, #000, 15%, #6aba2e 50%, 70%, #000);
+            background-color: #6aba2e;
+        }
+        .line--green:before{
+            background: linear-gradient(0deg, #6aba2e, #000)
+        }
+        .line--green:after{
+            background: linear-gradient(180deg, #6aba2e, #000)
         }
         .line--blue{
-            background: linear-gradient(180deg, #000, 15%, #26a7f5 50%, 70%, #000);
+            background-color: #26a7f5;
+        }
+        .line--blue:before{
+            background: linear-gradient(0deg, #26a7f5, #000)
+        }
+        .line--blue:after{
+            background: linear-gradient(180deg, #26a7f5, #000)
         }
         .line--purple{
-            background: linear-gradient(180deg, #000, 15%, #ac03a6 50%, 70%, #000);
+            background-color: #ac03a6;
+        }
+        .line--purple:before{
+            background: linear-gradient(0deg, #ac03a6, #000)
+        }
+        .line--purple:after{
+            background: linear-gradient(180deg, #ac03a6, #000)
+        }
+        /* 日期 - 时间 */
+        .date, .time{
+            color: #fff;
+            font-size: 24px;
+            transform: scale(.9);
+            text-align: right;
+        }
+        .date{
+            font-size: 10px;
         }
     </style>
 </head>
@@ -77,12 +141,19 @@
                 </div>
             </div>
             <div class="dial__front">
+                <div class="date">23 周五</div>
+                <div class="time">10:09</div>
             </div>
         </div>
     </div>
 
     <script src="i.js"></script>
     <script>
+        var now = new Date();
+        var dateEl = document.querySelector('.date')
+        var timeEl = document.querySelector('.time')
+        dateEl.innerHTML = now.getDate() + '   ' + '周' + '日一二三四五六'.charAt(now.getDay())
+        timeEl.innerHTML = now.getHours() + ':' + now.getMinutes()
     </script>
 
     

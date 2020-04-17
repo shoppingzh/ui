@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="i.css">
+  <title>Apple watch dial 5</title>
+  <style>
+    .dial-style5{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .dial-back,.dial-front{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      
+    }
+    .dial-back{
+      z-index: -1;
+    }
+    .dial-front{
+      z-index: 1;
+    }
+
+    .hour-pointer{
+      width: 20%;
+      height: 6px;
+      margin-top: -3px;
+    }
+    .hour-pointer:before{
+      width: 20%;
+      height: 3px;
+      left: 0;
+      top: 50%;
+      margin-top: -1.5px;
+    }
+    .hour-pointer:after{
+      width: 80%;
+      height: 100%;
+      left: 20%;
+    }
+
+    .minute-pointer {
+      width: 35%;
+      height: 6px;
+      margin-top: -3px;
+    }
+    .minute-pointer:before {
+      width: 10%;
+      height: 3px;
+      left: 0;
+      top: 50%;
+      margin-top: -1.5px;
+    }
+    .minute-pointer:after{
+      width: 90%;
+      height: 100%;
+      left: 10%;
+    }
+
+    .second-pointer {
+      width: 40%;
+      height: 2px;
+      margin-top: -1px;
+      border-radius: 1000px;
+      background-color: #ff9500;
+    }
+    .second-pointer:before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      left: -3px;
+      top: 50%;
+      margin-top: -3px;
+      background: radial-gradient(circle, #000 10%, #ff9500 90%);
+    }
+    .second-pointer:after{
+      width: 18%;
+      height: 2px;
+      left: -18%;
+      background-color: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watch">
+    <div class="dial dial-style5">
+      <div class="dial-back"></div>
+      <div class="dial-front">
+        <div class="pointers">
+          <div class="hour-pointer"></div>
+          <div class="minute-pointer"></div>
+          <div class="second-pointer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="i.js"></script>
+  <script>
+      var WatchDial = new WatchDial('.dial-back', {
+          offset: 10,
+          color: '#ff6748'
+      });
+
+      var hourPointer = document.querySelector('.hour-pointer')
+      var minutePointer = document.querySelector('.minute-pointer')
+      var secondPointer = document.querySelector('.second-pointer')
+
+      render()
+      setInterval(render, 1000)
+
+      function render() {
+        var now = new Date()
+        var h = now.getHours()
+        var m = now.getMinutes()
+        var s = now.getSeconds()
+        hourPointer.style.transform = `rotate(${(h % 12) / 12 * 360 - 90}deg)`
+        minutePointer.style.transform = `rotate(${m / 60 * 360 - 90}deg)`
+        secondPointer.style.transform = `rotate(${s * 6 - 90}deg)`
+      }
+  </script>
+
+</body>
+</html>

@@ -13,6 +13,15 @@
 #### apple watch 表盘2
 ![apple watch dial 2](images/apple-watch-dial-2.gif)
 
+#### apple watch 表盘3
+![apple watch dial 3](images/apple-watch-dial-3.png)
+
+#### apple watch 表盘4
+![apple watch dial 4](images/apple-watch-dial-4.png)
+
+#### apple watch 表盘5
+![apple watch dial 5](images/apple-watch-dial-5.png)
+
 #### apple watch 应用列表
 ![apple watch desk](images/apple-watch-desk.png)
 
