@@ -7,32 +7,21 @@
 
 ## Apple watch系列
 
-#### apple watch 表盘1
-![apple watch dial 1](images/apple-watch-dial-1.png)
+#### 1. apple watch 表盘
+![apple watch dial 1](images/apple-watch-dial-1.png)![apple watch dial 2](images/apple-watch-dial-2.gif)![apple watch dial 3](images/apple-watch-dial-3.png)![apple watch dial 4](images/apple-watch-dial-4.png)![apple watch dial 5](images/apple-watch-dial-5.png)
 
-#### apple watch 表盘2
-![apple watch dial 2](images/apple-watch-dial-2.gif)
 
-#### apple watch 表盘3
-![apple watch dial 3](images/apple-watch-dial-3.png)
+#### 2. apple watch 应用
+![apple watch desk](images/apple-watch-desk.png)![apple watch todo](images/apple-watch-todo.gif)![apple watch breath](images/apple-watch-breath2.gif)![apple watch recorder](images/apple-watch-recorder.gif)
 
-#### apple watch 表盘4
-![apple watch dial 4](images/apple-watch-dial-4.png)
 
-#### apple watch 表盘5
-![apple watch dial 5](images/apple-watch-dial-5.png)
+## 阴影系列
 
-#### apple watch 应用列表
-![apple watch desk](images/apple-watch-desk.png)
+#### 1. Android卡片阴影效果
+![android card](images/android-card.png)
 
-#### apple watch 待办事项
-![apple watch todo](images/apple-watch-todo.png)
-
-#### apple watch 呼吸
-![apple watch breath](images/apple-watch-breath2.gif)
-
-#### apple watch 语音备忘录
-![apple watch recorder](images/apple-watch-recorder.gif)
+#### 2. 单标签实现彩虹圆环
+![shadow 1](images/shadow.png)
 
 ## 其它
 
@@ -47,7 +36,7 @@
 #### card flip
 ![card flip](images/1.gif)
 
-#### 访微信网络错误页面
+#### 仿微信网络错误页面
 ![error](images/3.jpg)
 
 #### 首页展位效果
