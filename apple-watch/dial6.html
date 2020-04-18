@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="i.css">
+  <title>Apple watch dial 6</title>
+  <style>
+    .dial-style6{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 0 5px #c73084;
+    }
+    .rainbow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1px;
+      height: 1px;
+      transform: translate3d(-50%, -50%, 0);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px #ab2871,
+                  0 0 0 6px #000,
+                  0 0 0 9px #ab2871,
+                  0 0 0 10px #000,
+                  0 0 0 13px #ab2871,
+                  0 0 0 14px #000,
+                  0 0 0 17px #00a7de,
+                  0 0 0 18px #000,
+                  0 0 0 21px #00a7de,
+                  0 0 0 22px #000,
+                  0 0 0 25px #86c139,
+                  0 0 0 26px #000,
+                  0 0 0 29px #86c139,
+                  0 0 0 30px #000,
+                  0 0 0 33px #86c139,
+                  0 0 0 34px #000,
+                  0 0 0 37px #fdf51d,
+                  0 0 0 38px #000,
+                  0 0 0 41px #fdf51d,
+                  0 0 0 42px #000,
+                  0 0 0 45px #ffb400,
+                  0 0 0 46px #000,
+                  0 0 0 49px #ffb400,
+                  0 0 0 50px #000,
+                  0 0 0 53px #ff6c00,
+                  0 0 0 54px #000,
+                  0 0 0 57px #ff6c00,
+                  0 0 0 58px #000,
+                  0 0 0 61px #ff6c00,
+                  0 0 0 62px #000,
+                  0 0 0 65px #fe2900,
+                  0 0 0 66px #000,
+                  0 0 0 69px #ff2900,
+                  0 0 0 70px #000,
+                  0 0 0 73px #d50000,
+                  0 0 0 74px #000,
+                  0 0 0 77px #d30000,
+                  0 0 0 78px #000,
+                  0 0 0 81px #d40000;
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watch">
+    <div class="dial dial-style6">
+      <div class="rainbow"></div>
+      <div class="pointers">
+        <div class="hour-pointer"></div>
+        <div class="minute-pointer"></div>
+        <div class="second-pointer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var hourPointer = document.querySelector('.hour-pointer')
+    var minutePointer = document.querySelector('.minute-pointer')
+    var secondPointer = document.querySelector('.second-pointer')
+
+    render()
+    setInterval(render, 1000)
+
+    function render() {
+      var now = new Date()
+      var h = now.getHours()
+      var m = now.getMinutes()
+      var s = now.getSeconds()
+      hourPointer.style.transform = `rotate(${(h % 12) / 12 * 360 - 90}deg)`
+      minutePointer.style.transform = `rotate(${m / 60 * 360 - 90}deg)`
+      secondPointer.style.transform = `rotate(${s * 6 - 90}deg)`
+    }
+  </script>
+  
+  
+</body>
+</html>
