@@ -32,6 +32,25 @@
         <div class="wc-app"></div>
         <div class="wc-app"></div>
         <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
+        <div class="wc-app"></div>
     </div>
 
     <script src="i.js"></script>
@@ -57,12 +76,19 @@
 
         // 给app配上随机颜色
         $(apps).each(function() {
-            var r = Math.random() * 255;
-            var g = Math.random() * 255;
-            var b = Math.random() * 255;
-            var a = Math.floor(Math.random() + 0.5);
-            this.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
+            var r = getRandomColor();
+            var g = getRandomColor();
+            var b = getRandomColor();
+            this.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`
         })
+
+        function getRandomColor() {
+            var color = Math.random() * 255;
+            if (color > 20) {
+                return color;
+            }
+            return getRandomColor();
+        }
 
         // 反向递归查找当前组
         function findGroupInfo (index) {
