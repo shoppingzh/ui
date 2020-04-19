@@ -47,8 +47,14 @@
   <script src="i.js"></script>
   <script>
       var WatchDial = new WatchDial('.dial-back', {
-          offset: 10,
-          color: '#ff6748'
+          offset: 30,
+          color: '#ff6748',
+          width: 2,
+          height: 2,
+          break: {
+            at: 5,
+            width: 15,
+          }
       });
 
       var hourPointer = document.querySelector('.hour-pointer')

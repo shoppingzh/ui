@@ -154,9 +154,9 @@ html {
 /* 表盘刻度线 */
 .point-line {
     position: absolute;
-    width: 10px;
-    height: 1px;
-    margin-left: -5px;
+    min-width: 1px;
+    min-height: 1px;
+    margin-left: -0.5px;
     margin-top: -0.5px;
     background-color: #fff;
     transform-origin: 50% 50%;
@@ -173,12 +173,12 @@ html {
     content: '';
     display: inline-block;
     width: 50%;
-    height: 2px;
+    height: 100%;
     background-color: inherit;
     position: absolute;
     left: -49%;
     top: 50%;
-    margin-top: -1px;
+    transform: translate3d(0, -50%, 0);
     border-top-left-radius: 1000px;
     border-bottom-left-radius: 1000px;
 }

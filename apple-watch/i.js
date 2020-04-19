@@ -107,49 +107,92 @@
             throw new Error('表盘元素不存在');
         }
         this.el = el;
-        var opts = Object.assign({}, WatchDial.defauls, options)
-
+        var opts = Object.assign({}, WatchDial.defauls, options);
+        this.options = opts;
+        var number = opts.number || 0;
+        
         var html = '';
-        for(var i = 0; i < 60; i++) {
-            html += '<div '
-            html += 'class="point-line '
-            if (i % 5 === 0) {
-                html += 'point-line--break ';
+        for(var i = 0; i <= number - 1; i++) {
+            var classList = ['point-line'], styleList = [];
+            var isBreak =  isBreakAt(i);
+            if (isBreak) {
+                // classList.push('point-line--break');
             }
-            html += '"> ';
-            html += '</div>';
+
+            // 背景色
+            if (isBreak && opts.break.color) {
+                styleList.push('background-color: ' + opts.break.color);
+            } else {
+                styleList.push('background-color: ' + opts.color);
+            }
+
+            // 大小
+            if (isBreak && opts.break.width) {
+                styleList.push('width: ' + opts.break.width + 'px');
+                styleList.push('margin-left: -' + (opts.break.width / 2) + 'px');
+            } else if (opts.width) {
+                styleList.push('width: ' + opts.width + 'px');
+                styleList.push('margin-left: -' + (opts.width / 2) + 'px');
+            }
+            if (isBreak && opts.break.height) {
+                styleList.push('height: ' + opts.break.height + 'px');
+                styleList.push('margin-top: -' + (opts.break.height / 2) + 'px');
+            } else if (opts.height) {
+                styleList.push('height: ' + opts.height + 'px');
+                styleList.push('margin-top: -' + (opts.height / 2) + 'px');
+            }
+
+            html += '<div ';
+            html += 'class="'+ classList.join(' ') +'"';
+            if (styleList.length) {
+                html += 'style="'+ styleList.join('; ') +'"';
+            }
+            html += '></div>';
         }
         el.innerHTML = html;
 
-        var lines = el.querySelectorAll('.point-line')
-        var R = el.clientWidth / 2
-        var r = lines[0].clientWidth / 2
-
-        if (opts.offset > 0 && opts.offset < R) {
-            r += opts.offset
-        }
-
+        var lines = el.querySelectorAll('.point-line');
+        // 确定位置
+        var R = el.clientWidth / 2;
+        // 指针距离表盘外圈的偏移量
+        var offset = opts.offset > 0 && opts.offset < R ? opts.offset : 0;
         lines.forEach(function(line, index) {
-            var isBreak = (index % 5) === 0
-            var degree = index * 6
-            var pos = $.getRotatePosition(R - r, degree)
-            line.style.transform = `rotate(${degree}deg)`
-            line.style.left = (pos.x + R) + 'px'
-            line.style.top = (pos.y + R) + 'px'
-            if (opts.color) {
-                line.style.backgroundColor = opts.color
-            }
-            if (isBreak && (opts.breakColor || opts.color)) {
-                line.style.backgroundColor = opts.breakColor || opts.color
-            }
+            var isBreak = isBreakAt(index);
+            var r = (isBreak && opts.break.width > 0) ? opts.break.width : opts.width;
+            r += offset;
+            var degree = index * (360 / opts.number);
+            var pos = $.getRotatePosition(R - r / 2, degree);
+            line.style.transform = `rotate(${degree}deg)`;
+            line.style.left = (pos.x + R) + 'px';
+            line.style.top = (pos.y + R) + 'px';
+        })        
 
-        })
+        function isBreakAt(index) {
+            if (!opts.break) {
+                return false;
+            }
+            var at = opts.break.at;
+            if (typeof at === 'number') {
+                return index % at === 0;
+            } else if (Array.isArray(at)) {
+                return at.indexOf(index) >= 0;
+            }
+            return false;
+        }
     }
 
     WatchDial.defauls = {
-        offset: 3,
+        offset: 0,
         color: '#fff',
-        breakColor: null
+        number: 60,
+        width: 6,
+        height: 1,
+        break: {
+            at: 5,
+            color: null,
+            width: 12,
+            height: null
+        }
     }
 
     window.WatchDial = WatchDial;
