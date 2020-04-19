@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="i.css">
+  <title>Apple watch dial 7</title>
+  <style>
+    .dial-style{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .dial-right{
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      width: 45%;
+      height: 45%;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+
+    .hour-pointer:before,.hour-pointer:after,.minute-pointer:before,.minute-pointer:after{
+      border: 1px solid #333;
+    }
+    .hour-pointer, .minute-pointer{
+      height: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watch">
+    <div class="dial dial-style7">
+      <div class="dial-right">
+        <div class="dial-right__back"></div>
+        <div class="pointers">
+          <div class="hour-pointer"></div>
+          <div class="minute-pointer"></div>
+          <div class="second-pointer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="i.js"></script>
+  <script>
+    new WatchDial('.dial-right__back', {
+      offset: 5,
+      color: '#999',
+      width: 4,
+      break: {
+        at: 6,
+        width: 8,
+        color: '#333'
+      }
+    })
+
+    var hourPointer = document.querySelector('.hour-pointer')
+    var minutePointer = document.querySelector('.minute-pointer')
+    var secondPointer = document.querySelector('.second-pointer')
+
+    render()
+    setInterval(render, 1000)
+
+    function render() {
+      var now = new Date()
+      var h = now.getHours()
+      var m = now.getMinutes()
+      var s = now.getSeconds()
+      hourPointer.style.transform = `rotate(${(h % 12) / 12 * 360 - 90}deg)`
+      minutePointer.style.transform = `rotate(${m / 60 * 360 - 90}deg)`
+      secondPointer.style.transform = `rotate(${s * 6 - 90}deg)`
+    }
+  </script>
+
+</body>
+</html>
