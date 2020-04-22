@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="i.css">
+  <title>Apple watch dial 8</title>
+  <style>
+    .dial-style8, .dial__back{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .hour{
+      color: #63aeed;
+      font-size: 54px;
+      position: absolute;
+      left: 8%;
+      top: 5%;
+    }
+    .exercise{
+      position: absolute;
+      bottom: 15%;
+      left: 8%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #63aeed,
+                  0 0 0 3px #000,
+                  0 0 0 5px #63aeed,
+                  0 0 0 6px #000,
+                  0 0 0 8px #63aeed;
+    }
+    .exercise:after{
+      content: '';
+      background-color: #000;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 11px;
+      height: 1px;
+      transform: translate3d(0, -50%, 0) rotate(-75deg);
+      transform-origin: 0 50%;
+    }
+    .second-pointer{
+      background-color: #63aeed;
+    }
+    .second-pointer:before{
+      background: radial-gradient(circle, #000 30%, 30%, #63aeed 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watch">
+    <div class="dial dial-style8">
+      <div class="dial__back">
+        <div class="pointers"></div>
+      </div>
+      <div class="hour"></div>
+      <div class="exercise"></div>
+    </div>
+  </div>
+
+  <script src="i.js"></script>
+  <script>
+    var clock = new Clock(document.querySelector('.pointers'), {
+
+    })
+
+    var hour = document.querySelector('.hour')
+    new Tick({
+      with: 1000,
+      callback: function() {
+        hour.innerHTML = new Date().getHours()
+      }
+    })
+  </script>
+</body>
+</html>

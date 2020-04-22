@@ -8,7 +8,7 @@
 ## Apple watch系列
 
 #### 1. apple watch 表盘
-![apple watch dial 1](images/apple-watch-dial-1.png)![apple watch dial 2](images/apple-watch-dial-2.gif)![apple watch dial 3](images/apple-watch-dial-3.png)![apple watch dial 4](images/apple-watch-dial-4.png)![apple watch dial 5](images/apple-watch-dial-5.gif?v=3)![apple watch dial 6](images/apple-watch-dial-6.gif)
+![apple watch dial 1](images/apple-watch-dial-1.png)![apple watch dial 2](images/apple-watch-dial-2.gif)![apple watch dial 3](images/apple-watch-dial-3.png)![apple watch dial 4](images/apple-watch-dial-4.png)![apple watch dial 5](images/apple-watch-dial-5.gif?v=3)![apple watch dial 6](images/apple-watch-dial-6.gif)![apple watch dial 8](images/apple-watch-dial-8.gif)
 
 
 #### 2. apple watch 应用
