@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="i.css">
+  <title>Apple watch dial 9</title>
+  <style>
+    .dial-style9{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .dial__back{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      background-color: #f5f1d3;
+    }
+    .mini-hands{
+      position: absolute;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 30%;
+      height: 30%;
+      z-index: -1;
+    }
+    .hands-1{
+      top: 25%;
+    }
+    .hands-2{
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watch">
+    <div class="dial dial-style9">
+      <div class="dial__back">
+        <div class="pointers"></div>
+        <div class="hands"></div>
+        <div class="mini-hands hands-1"></div>
+        <div class="mini-hands hands-2"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="i.js"></script>
+  <script>
+
+    
+
+    new WatchDial('.hands-1', {
+        offset: 5,
+        number: 30,
+        color: '#aaa',
+        width: 3,
+        break: {
+          at: 5,
+          width: 5,
+          color: '#666'
+        }
+    });
+
+    new WatchDial('.hands-2', {
+        offset: 5,
+        number: 30,
+        color: '#aaa',
+        width: 3,
+        break: {
+          at: 5,
+          width: 5,
+          color: '#666'
+        }
+    });
+
+    var WatchDial = new WatchDial('.hands', {
+        offset: 5,
+        color: '#aaa',
+        width: 5,
+        break: {
+          at: 5,
+          width: 8,
+          color: '#333'
+        }
+    });
+
+    var clock = new Clock(document.querySelector('.pointers'), {
+
+    })
+
+  </script>
+</body>
+</html>
