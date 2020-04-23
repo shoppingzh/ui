@@ -4,28 +4,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .button{
-      display: inline-block;
-      padding: 8px 20px;
-      
-      border-radius: 3px;
-    }
-    .button--large{
-      padding: 12px 24px;
-    }
-    .shadow{
-      box-shadow: 1px 1px 2px 1px rgba(200, 200, 200, 1);
-    }
-    .shadow--inset{
-      box-shadow: inset 1px 1px 2px 1px rgba(200, 200, 200, 1);
+    .shadow1{
+      width: 200px;
+      height: 200px;
+      border-radius: 50px;
+      box-shadow:  inset 10px 10px 50px rgba(100, 100, 100, 1),
+      inset -10px -10px 50px rgba(100, 100, 100, 1);
     }
   </style>
 </head>
 <body>
   
-  <div class="button button--large shadow">
-    <div class="shadow--inset" style="padding: 15px; display: inline-block; margin-right: 5px; border-radius: 3px;"></div>
-    Hello
+  <div class="shadow1">
   </div>
   
 </body>

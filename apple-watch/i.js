@@ -198,3 +198,95 @@
     window.WatchDial = WatchDial;
 
 })()
+
+/**
+ * 钟表指针
+ */
+;(function(window, document) {
+
+    function Tick(options) {
+        this.options = Object.assign({}, options, Tick.defauls);
+        this.init();
+    }
+
+    Tick.prototype = {
+        init: function() {
+            this.start();
+        },
+        start: function() {
+            this.running = true;
+            this._doTick(this.options.callback);
+        },
+        stop: function() {
+            this.running = false;
+            clearTimeout(this.timer);
+        },
+        _doTick: function(callback) {
+            var that = this;
+            clearTimeout(that.timer);
+            that.timer = setTimeout(function() {
+                if (callback) {
+                    callback.call(that);
+                }
+                if (that.running) {
+                    that._doTick(callback);
+                }
+            }, that.options.with)
+        }
+    }
+
+    Tick.defauls = {
+        with: 1000
+    }
+
+    function Clock(el, options) {
+        this.el = el;
+        this.options = options;
+        this.init();
+    }
+
+    Clock.prototype = {
+        init: function() {
+            this.hp = document.createElement('div');
+            this.mp = document.createElement('div');
+            this.sp = document.createElement('div');
+            this.hp.classList.add('hour-pointer');
+            this.mp.classList.add('minute-pointer');
+            this.sp.classList.add('second-pointer');
+
+            this.el.appendChild(this.hp);
+            this.el.appendChild(this.mp);
+            this.el.appendChild(this.sp);
+
+            var that = this;
+
+            that._render();
+            this.tick = new Tick({
+                with: 1000,
+                callback: function() {
+                    that._render();
+                }
+            })
+
+        },
+        start: function() {
+            this.tick.start();
+        },
+        stop: function() {
+            this.tick.stop();
+        },
+        _render: function() {
+            var now = new Date()
+            var h = now.getHours()
+            var m = now.getMinutes()
+            var s = now.getSeconds()
+            this.hp.style.transform = `rotate(${(h % 12) / 12 * 360 - 90}deg)`
+            this.mp.style.transform = `rotate(${m / 60 * 360 - 90}deg)`
+            this.sp.style.transform = `rotate(${s * 6 - 90}deg)`
+        }
+    }
+
+    window.Tick = Tick;
+    window.Clock = Clock;
+
+})(window, document)
