@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube skeleton ui</title>
+    <style>
+        .app{
+            width: 375px;
+            height: 667px;
+            overflow: hidden;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            border-radius: 15px;
+            transform: translate(-50%, -50%);
+            background-color: #f3f4f7;
+            box-shadow: 0 0 3px 0 rgba(200, 200, 200, .15),
+                        2px 2px 3px 0 rgba(160, 160, 160, .65);
+        }
+        .app__name{ padding: 15px; background-color: #fff; font-size: 16px; font-weight: bold; }
+        /* 视频媒体 */
+        .media{
+            margin: 10px 0 15px;
+        }
+        .media__inner{
+            width: 100%;
+            height: 200px;
+            background-color: #e8e8e8;
+        }
+        .media__author{
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 15px;
+        }
+        .media__avatar{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e8e8e8;
+            margin-right: 15px;
+        }
+        .media__desc{
+            flex: 1;
+        }
+        .media__desc__line{
+            height: 15px;
+            margin-bottom: 5px;
+            background-color: #e8e8e8;
+            border-radius: 3px;
+        }
+        .media__desc__line:last-child{
+            width: 45%;
+        }
+
+        /* 减压的动画效果 */
+        .animate-overlay{
+            position: absolute;
+            left: 10%;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            animation: ani-flash 4s infinite ease-in;
+            background: transparent;
+            box-shadow: 0 0 60px 50px rgba(200, 200, 200, .2);
+        }
+        @keyframes ani-flash {
+            0% {
+                top: 10%;
+            }
+            50% {
+                top: 100%;
+            }
+            100% {
+                top: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app">
+        <div class="app__name">Youtube</div>
+        <div class="animate-overlay"></div>
+        <div class="media">
+            <div class="media__inner"></div>
+            <div class="media__author">
+                <div class="media__avatar"></div>
+                <div class="media__desc">
+                    <div class="media__desc__line"></div>
+                    <div class="media__desc__line"></div>
+                    <div class="media__desc__line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media__inner"></div>
+            <div class="media__author">
+                <div class="media__avatar"></div>
+                <div class="media__desc">
+                    <div class="media__desc__line"></div>
+                    <div class="media__desc__line"></div>
+                    <div class="media__desc__line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media__inner"></div>
+            <div class="media__author">
+                <div class="media__avatar"></div>
+                <div class="media__desc">
+                    <div class="media__desc__line"></div>
+                    <div class="media__desc__line"></div>
+                    <div class="media__desc__line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

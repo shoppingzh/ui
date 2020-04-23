@@ -23,6 +23,13 @@
 #### 2. 单标签实现彩虹圆环
 ![shadow 1](images/shadow.png)
 
+## 占位系列
+#### 1. youtube首页占位效果（动画）
+![youtube skeleton](images/skeleton-youtube.gif)
+
+#### 2. 通用首页占位
+![placeholder](images/skeleton-home.png)
+
 ## 其它
 
 #### 365 Dots
@@ -38,9 +45,6 @@
 
 #### 仿微信网络错误页面
 ![error](images/3.jpg)
-
-#### 首页展位效果
-![placeholder](images/4.jpg)
 
 #### 纯css实现tooltip
 ![tooltip](images/tooltip.gif)
