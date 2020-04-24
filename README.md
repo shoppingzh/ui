@@ -32,6 +32,9 @@
 
 ## 其它
 
+#### 防抖-节流可视化UI
+![debounce and throttle](images/debounce-throttle.gif)
+
 #### 365 Dots
 > 365 Dots是iOS的一个应用，用来展示当前一年走过的时间。
 
