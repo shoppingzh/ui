@@ -17,8 +17,8 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 1px;
-      height: 1px;
+      width: 2px;
+      height: 2px;
       transform: translate3d(-50%, -50%, 0);
       border-radius: 50%;
       box-shadow: 0 0 0 5px #ab2871,
@@ -70,30 +70,13 @@
     <div class="dial dial-style6">
       <div class="rainbow"></div>
       <div class="pointers">
-        <div class="hour-pointer"></div>
-        <div class="minute-pointer"></div>
-        <div class="second-pointer"></div>
       </div>
     </div>
   </div>
 
+  <script src="i.js"></script>
   <script>
-    var hourPointer = document.querySelector('.hour-pointer')
-    var minutePointer = document.querySelector('.minute-pointer')
-    var secondPointer = document.querySelector('.second-pointer')
-
-    render()
-    setInterval(render, 1000)
-
-    function render() {
-      var now = new Date()
-      var h = now.getHours()
-      var m = now.getMinutes()
-      var s = now.getSeconds()
-      hourPointer.style.transform = `rotate(${(h % 12) / 12 * 360 - 90}deg)`
-      minutePointer.style.transform = `rotate(${m / 60 * 360 - 90}deg)`
-      secondPointer.style.transform = `rotate(${s * 6 - 90}deg)`
-    }
+    new Clock(document.querySelector('.pointers'))
   </script>
   
   

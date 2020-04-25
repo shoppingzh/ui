@@ -35,9 +35,6 @@
       <div class="dial-back"></div>
       <div class="dial-front">
         <div class="pointers">
-          <div class="hour-pointer"></div>
-          <div class="minute-pointer"></div>
-          <div class="second-pointer"></div>
         </div>
       </div>
     </div>
@@ -57,22 +54,7 @@
           }
       });
 
-      var hourPointer = document.querySelector('.hour-pointer')
-      var minutePointer = document.querySelector('.minute-pointer')
-      var secondPointer = document.querySelector('.second-pointer')
-
-      render()
-      setInterval(render, 1000)
-
-      function render() {
-        var now = new Date()
-        var h = now.getHours()
-        var m = now.getMinutes()
-        var s = now.getSeconds()
-        hourPointer.style.transform = `rotate(${(h % 12) / 12 * 360 - 90}deg)`
-        minutePointer.style.transform = `rotate(${m / 60 * 360 - 90}deg)`
-        secondPointer.style.transform = `rotate(${s * 6 - 90}deg)`
-      }
+      new Clock(document.querySelector('.pointers'))
   </script>
 
 </body>
