@@ -110,8 +110,10 @@
         var opts = Object.assign({}, WatchDial.defauls, options);
         this.options = opts;
         var number = opts.number || 0;
-        
+        var breakText = opts.break.text;
         var html = '';
+        
+        // 刻度线
         for(var i = 0; i <= number - 1; i++) {
             var classList = ['point-line'], styleList = [];
             var isBreak =  isBreakAt(i);
@@ -149,23 +151,48 @@
             }
             html += '></div>';
         }
+        // 刻度文字
+        if (breakText && breakText.length) {
+            for(var i = 0, len = breakText.length; i < len; i++) {
+                html += '<span class="point-text">';
+                html += breakText[i] || '';
+                html += '</span>';
+            }
+        }
+
         el.innerHTML = html;
 
         var lines = el.querySelectorAll('.point-line');
-        // 确定位置
+        var texts = el.querySelectorAll('.point-text');
+        // 确定指针与指针文字的位置
         var R = el.clientWidth / 2;
         // 指针距离表盘外圈的偏移量
         var offset = opts.offset > 0 && opts.offset < R ? opts.offset : 0;
+        var breakIndex = 0;
         lines.forEach(function(line, index) {
             var isBreak = isBreakAt(index);
             var r = (isBreak && opts.break.width > 0) ? opts.break.width : opts.width;
-            r += offset;
             var degree = index * (360 / opts.number);
-            var pos = $.getRotatePosition(R - r / 2, degree);
+            var pos = $.getRotatePosition(R - (r + offset) / 2, degree);
+            var x = pos.x + R, y = pos.y + R;
             line.style.transform = `rotate(${degree}deg)`;
-            line.style.left = (pos.x + R) + 'px';
-            line.style.top = (pos.y + R) + 'px';
-        })        
+            line.style.left = x + 'px';
+            line.style.top = y + 'px';
+
+            if (isBreak && texts.length) {
+                var textEl = texts[breakIndex++];
+                if (textEl) {
+                    var dr = 2 * Math.PI / 360 * degree; // 弧度
+                    var rr = r / 2 + 5;
+                    var tx = x;
+                    tx = tx - (rr * Math.cos(dr))
+                    var ty = y - rr * Math.sin(dr);
+                    textEl.style.left = tx + 'px';
+                    textEl.style.top = ty + 'px';
+                }
+            }
+        })
+
 
         function isBreakAt(index) {
             if (!opts.break) {
@@ -191,7 +218,8 @@
             at: 5,
             color: null,
             width: 12,
-            height: null
+            height: null,
+            text: null
         }
     }
 
