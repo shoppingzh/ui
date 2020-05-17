@@ -1,0 +1,111 @@
+<style>
+    .course-card{
+        margin-bottom: .2rem;
+    }
+
+    .app{
+        height: 100%;
+    }
+
+    .top-menu{
+        padding: .2rem;
+        box-shadow: 0 1px 2px 0 rgba(200, 200, 200, .8);
+        margin-bottom: .1rem;
+    }
+
+    .left-menu{
+        width: 20%;
+        background-color: #f3f4f7;
+        padding: .1rem 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .left-menu__item{
+        padding: .4rem .2rem;
+        font-size: .26rem;
+    }
+    .left-menu__item--active {
+        background-color: #fff;
+        position: relative;
+    }
+    .left-menu__item--active:before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 30%;
+        bottom: 30%;
+        width: .06rem;
+        border-radius: 0 .1rem .1rem 0;
+        background-color: cyan;
+    }
+
+</style>
+<!-- 这里还是一个标准的BUI页面 -->
+<div class="bui-page bui-box-vertical">
+    <main>
+        <div class="app bui-box-vertical">
+            <div class="app-header">
+                <div id="uiSlide" class="bui-slide">
+                    <div class="bui-slide-main">
+                        <ul>
+                            <li>
+                                <img src="http://img0.imgtn.bdimg.com/it/u=255540472,3722890280&fm=26&gp=0.jpg" alt="">
+                                <!-- <div class="bui-slide-title">图片标题</div> -->
+                            </li>
+                            <li style="display:none;">
+                                <img src="http://img3.imgtn.bdimg.com/it/u=2544377084,275372641&fm=26&gp=0.jpg" alt="">
+                                <!-- <div class="bui-slide-title">图片标题</div> -->
+                            </li>
+                            <li style="display:none;">
+                                <img src="http://img3.imgtn.bdimg.com/it/u=1141578334,974322143&fm=26&gp=0.jpg" alt="">
+                                <!-- <div class="bui-slide-title">图片标题</div> -->
+                            </li>
+                            <li style="display:none;">
+                                <img src="http://img5.imgtn.bdimg.com/it/u=1590661274,3032950117&fm=26&gp=0.jpg" alt="">
+                                <!-- <div class="bui-slide-title">图片标题</div> -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="bui-box top-menu" style="justify-content: space-around;">
+                    <div class="top-menu__item">
+                        <i class="icon-camerafill"></i>
+                        hello
+                    </div>
+                    <div class="top-menu__item">
+                        hello
+                    </div>
+                    <div class="top-menu__item">
+                        hello
+                    </div>
+                    <div class="top-menu__item">
+                        hello
+                    </div>
+                </div> -->
+            </div>
+            <div class="app-main span1">
+                <div class="bui-box" style="height: 100%;">
+                    <div class="left-menu">
+                        <div class="left-menu__item">热销榜</div>
+                        <div class="left-menu__item">精品推荐</div>
+                        <div class="left-menu__item">设计与创意</div>
+                        <div class="left-menu__item left-menu__item--active">电商运营</div>
+                        <div class="left-menu__item">职业考试</div>
+                        <div class="left-menu__item">生活兴趣</div>
+                        <div class="left-menu__item">产品与运营</div>
+                    </div>
+                    <div class="container-xy span1">
+                        <component name="pages/components/courseCard"></component>
+                        <component name="pages/components/courseCard"></component>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+    <footer>
+        <!-- 底部内容 -->
+    </footer>
+</div>

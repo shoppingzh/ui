@@ -1,0 +1,40 @@
+body, .bui-page{
+  background-color: #fff;
+}
+
+/** 课程卡片 */
+.course-card{
+  border-radius: .1rem;
+  border: 1px solid rgba(240, 240, 240, 1);
+  box-shadow: 0 0 1px 0 rgba(240, 240, 240, .85),
+              /* 0 0 20px 0 rgba(240, 240, 240, 1), */
+              1px 1px 1px 0 rgba(180, 180, 180, .65);
+  padding: .2rem;
+}
+.course-card__thumbnail {
+  width: 30%;
+  height: 100%;
+  object-fit: contain;
+}
+.course-card__thumbnail img{
+  border-radius: .1rem;
+}
+.course-card__main {
+  margin-left: .2rem;
+}
+.course-card__title {
+  font-weight: bold;
+  margin-bottom: .1rem;
+}
+.course-card__text{
+  font-size: .2rem;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+.course-card__price {
+  font-size: .35rem;
+  color: #f00;
+}
+.course-card__price:before {
+  content: '￥';
+} 
