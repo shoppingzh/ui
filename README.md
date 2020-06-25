@@ -36,6 +36,9 @@
 
 ## 其它
 
+#### 仿饿了么首页的宣传卡片效果
+![饿了么宣传卡片效果](images/ele.me.gif)
+
 #### 防抖-节流可视化UI
 ![debounce and throttle](images/debounce-throttle.gif)
 

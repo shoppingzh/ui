@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>https://www.ele.me</title>
+  <style>
+    .items {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      left: 50%;
+      top: 10%;
+      transform: translate(-50%, 0);
+    }
+    .item {
+      display: flex;
+      margin: 15px;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 8px;
+      background-color: rgb(0, 141, 225);
+      opacity: .5;
+      transition: all .5s;
+    }
+    .item .item__inner {
+      width: 0;
+      visibility: hidden;
+      transition: width .5s;
+    }
+    .item.active {
+      opacity: 1;
+      transition: all .5s;
+    }
+    .item.active .item__inner {
+      visibility: visible;
+      width: 400px;
+    }
+    .item__inner {
+      position: relative;
+      flex: 1;
+    }
+    .item__inner .item__text {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+    }
+    .item__text p {
+      margin: 0 0 5px;
+      white-space: pre;
+    }
+    .item__title {
+      writing-mode: vertical-lr;
+      letter-spacing: 10px;
+      font-size: 22px;
+      color: #fff;
+      padding: 50px 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="items">
+    <div class="item active">
+      <div class="item__inner">
+        <div class="item__text">
+          <p>全职收入多劳多得</p>
+          <p>稳定保障风险少</p>
+        </div>
+      </div>
+      <div class="item__title">蜂鸟配送</div>
+    </div>
+    <div class="item">
+      <div class="item__inner">
+        <div class="item__text">
+          <p>共创合作，领跑市场</p>
+          <p>专业扶持为你保驾护航</p>
+        </div>
+      </div>
+      <div class="item__title">代理加盟</div>
+    </div>
+    <div class="item">
+      <div class="item__inner">
+        <div class="item__text">
+          <p>多一种开店方式</p>
+          <p>连接千家万户的餐桌</p>
+        </div>
+      </div>
+      <div class="item__title">商家开店</div>
+    </div>
+    <div class="item">
+      <div class="item__inner">
+        <div class="item__text">
+          <p>准时必达，超时秒赔</p>
+          <p>每天领取惊喜红包</p>
+        </div>
+      </div>
+      <div class="item__title">外卖点餐</div>
+    </div>
+  </div>
+
+  <script>
+    var items = document.querySelectorAll('.item');
+    items.forEach(function(item) {
+      item.addEventListener('mouseenter', hoverHandler, false);
+      // item.addEventListener('mouseleave', hoverHandler, false);
+    })
+
+    function hoverHandler(e) {
+      var type = e.type;
+      items.forEach(function(item) {
+        item.classList.remove('active')
+      })
+      if (type === 'mouseenter') {
+        this.classList.add('active')
+      }
+    }
+  </script>
+  
+</body>
+</html>
