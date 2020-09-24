@@ -20,6 +20,10 @@ loader.define(function(require, exports, module) {
             loop: true
         })
 
+        router.$('.bui-page').on('click', '.left-menu__item', function() {
+            $(this).addClass('left-menu__item--active').siblings('.left-menu__item').removeClass('left-menu__item--active');
+        })
+
     }
 
     // 初始化
