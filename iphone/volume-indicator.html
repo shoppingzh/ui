@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="iphone.css" >
+  <style>
+    html, body {
+      background-color: #000;
+    }
+    .volume-indicator {
+      position: fixed;
+      top: 10%;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="indicator" class="volume-indicator">
+    <div class="volume-indicator__inner"></div>
+  </div>
+  
+  <script src="volume-indicator.js"></script>
+  <script>
+    var Indicator = new VolumeIndicator(document.querySelector('#indicator'))
+    console.log(Indicator)
+  </script>
+
+</body>
+</html>

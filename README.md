@@ -18,6 +18,10 @@
 #### 2. apple watch 应用
 ![apple watch desk](images/apple-watch-desk.png)![apple watch todo](images/apple-watch-todo.gif)![apple watch breath](images/apple-watch-breath2.gif)![apple watch recorder](images/apple-watch-recorder.gif)
 
+## iPhone系列
+#### 1. iOS 13音量指示器UI
+![iphone volume indicator](images/volume-indicator.gif)
+
 
 ## 阴影系列
 
