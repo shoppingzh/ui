@@ -6,11 +6,19 @@
     .app{
         height: 100%;
     }
+    .app-header, .app-main {
+        overflow: hidden;
+    }
 
     .top-menu{
         padding: .2rem;
         box-shadow: 0 1px 2px 0 rgba(200, 200, 200, .8);
         margin-bottom: .1rem;
+    }
+    .main-content {
+        padding: .1rem!important;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .left-menu{
@@ -94,8 +102,18 @@
                         <div class="left-menu__item">职业考试</div>
                         <div class="left-menu__item">生活兴趣</div>
                         <div class="left-menu__item">产品与运营</div>
+                        <div class="left-menu__item">编程语言</div>
+                        <div class="left-menu__item">产品与运营</div>
+                        <div class="left-menu__item">产品与运营</div>
+                        <div class="left-menu__item">产品与运营</div>
                     </div>
-                    <div class="container-xy span1">
+                    <div class="span1 main-content">
+                        <component name="pages/components/courseCard"></component>
+                        <component name="pages/components/courseCard"></component>
+                        <component name="pages/components/courseCard"></component>
+                        <component name="pages/components/courseCard"></component>
+                        <component name="pages/components/courseCard"></component>
+                        <component name="pages/components/courseCard"></component>
                         <component name="pages/components/courseCard"></component>
                         <component name="pages/components/courseCard"></component>
                     </div>

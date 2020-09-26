@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      overflow: hidden;
+      margin: 20px auto;
+      padding: 5px 10px;
+      background: #00bf8f;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      color: #fff;
+      font-size: 14px;
+      border-radius: 1000px;
+    }
+    .text {
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .text--roll {
+      animation-name: roll;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+    }
+    @keyframes roll {
+      0% {
+        transform: translate(0);
+      }
+      100% {
+        transform: translate(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <span class="text">
+      浔阳江头夜送客，枫叶荻花秋瑟瑟；主人下马客在船，举酒欲饮无管弦。醉不成欢惨将别，别时茫茫江浸月。
+    </span>
+  </div>
+
+  <div class="container">
+    <span class="text">
+      hello, world!
+    </span>
+  </div>
+
+  <div class="container">
+    <span class="text">
+      你好，世界！
+    </span>
+  </div>
+
+  <script>
+    document.querySelectorAll('.container').forEach(container => {
+      var text = container.querySelector('.text')
+      var cw = container.clientWidth, w = text.clientWidth
+      console.log(cw + '---' + w)
+      if (w > cw) {
+        var ratio = w / cw
+        text.classList.add('text--roll')
+        text.style.animationDuration =  (ratio * 10) + 's'
+      }
+    })
+  </script>
+
+</body>
+</html>
