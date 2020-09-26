@@ -15,6 +15,13 @@
   background-color: #333;
   border-radius: 10px;
   overflow: hidden;
+  
+  transition: width .3s, transform .3s;
+}
+
+.volume-indicator--mini {
+  width: 10px;
+  transform: translate(-10px, 0);
 }
 
 .volume-indicator__inner {

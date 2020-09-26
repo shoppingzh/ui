@@ -38,6 +38,8 @@
 
   VolumeIndicator.prototype.moveStart = function(y) {
     this.y = y
+    this.el.classList.remove('volume-indicator--mini')
+    clearTimeout(this.collapseTimer)
   }
 
   VolumeIndicator.prototype.move = function(y) {
@@ -55,6 +57,10 @@
   
   VolumeIndicator.prototype.moveEnd = function() {
     this.y = null
+    var _this = this
+    this.collapseTimer = setTimeout(function() {
+      _this.el.classList.add('volume-indicator--mini')
+    }, 3000)
   }
 
   VolumeIndicator.prototype.getVolume = function() {
