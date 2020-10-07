@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+    }
+    .tag {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #333;
+      transition: border-radius .1s;
+    }
+    .line {
+      position: fixed;
+      width: 1px;
+      background-color: #000;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      transform: translate(-50%, 0);
+    }
+    .container {
+      position: fixed;
+      width: 200px;
+      height: 300px;
+      border: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <div id="container" class="container">
+    <div id="tag" class="tag"></div>
+  </div> -->
+
+  <div id="tag2" class="tag"></div>
+
+  <!-- <div class="line"></div> -->
+
+  <script src="tag.js"></script>
+  <script>
+    // new Tag(document.querySelector('#tag'), {
+    //   container: document.querySelector('#container')
+    // })
+    new Tag(document.querySelector('#tag2'))
+  </script>
+  
+</body>
+</html>
