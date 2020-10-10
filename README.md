@@ -22,6 +22,19 @@
 #### 1. iOS 13音量指示器UI
 ![iphone volume indicator](images/volume-indicator.gif)
 
+#### 2. 仿iPhone桌面搜索
+![iphone-search](images/iphone-search.gif)
+
+## 微信系列
+#### 1. 微信彩签
+![wechat tag](images/wechat-tag.gif)
+
+#### 2. 网络错误
+![error](images/3.jpg)
+
+#### 3. webview底部操作栏
+![wechat-webview](images/wechat-webview.gif)
+
 
 ## 阴影系列
 
@@ -60,17 +73,10 @@
 #### card flip
 ![card flip](images/1.gif)
 
-#### 仿微信网络错误页面
-![error](images/3.jpg)
-
 #### 纯css实现tooltip
 ![tooltip](images/tooltip.gif)
 
 #### css实现的加载动画
 ![loading](images/loading.gif)
 
-#### 仿iPhone桌面搜索
-![iphone-search](images/iphone-search.gif)
 
-#### 仿微信webview底部操作栏滚动效果
-![wechat-webview](images/wechat-webview.gif)
