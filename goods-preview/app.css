@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+.phone {
+  width: 375px;
+  height: 667px;
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  transform: translate(-50%, 0);
+  background-image: url("bg.png");
+  background-position: center;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.dialog {
+  height: 75%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-radius: 12px;
+  transition: all .5s;
+}
+
+/* 商品 */
+
+.goods {
+  position: relative;
+}
+
+/* 头部区域 */
+
+.goods__header {
+  display: flex;
+  align-items: flex-end;
+  height: 20%;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.goods__thumbnail {
+  height: 100%;
+  padding: 5px;
+}
+
+.goods__thumbnail img {
+  height: 100%;
+}
+
+.goods__profile {
+  padding: 10px;
+}
+
+.goods__price {
+  color: #f2270c;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.goods__price:before {
+  content: "￥";
+  font-size: 12px;
+}
+
+.goods__intro {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+/* 主体区域 */
+
+.goods__main {
+  height: calc(80% - 18px);
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+
+.goods__main::-webkit-scrollbar {
+  display: none;
+}
+
+.goods__feature {
+  margin-bottom: 12px;
+  padding: 0 15px;
+}
+
+.goods__feature__label {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #262626;
+  font-weight: 700;
+}
+
+.goods__feature__item {
+  display: inline-block;
+  min-width: 30px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  padding: 5px 15px;
+  font-size: 12px;
+  color: #262626;
+  line-height: 16px;
+  background-color: #f2f2f2;
+  border-radius: 1000px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.goods__feature__item--active {
+  background-color: #fcedeb;
+  color: #f2270c;
+  font-weight: 600;
+}
+
+/* 购买区域 */
+.goods__buy {
+  display: flex;
+  height: 50px;
+  padding: 10px 15px 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.goods__buy__item {
+  flex: 1;
+  text-align: center;
+  line-height: 36px;
+  /* font-weight: 600; */
+  font-size: 12px;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 1000px;
+}
+
+.goods__buy__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.goods__buy__item--red {
+  background-image: linear-gradient(135deg,#f2140c,#f2270c 70%,#f24d0c);
+}
+
+.goods__buy__item--yellow {
+  background-image: linear-gradient(135deg,#ffba0d,#ffc30d 69%,#ffcf0d);
+}

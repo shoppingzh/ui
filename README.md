@@ -53,6 +53,9 @@
 
 ## 其它
 
+#### 京东商品详情
+![京东商品详情](images/goods-preview.gif)
+
 #### 横向滚动文字效果（css + 少量js）
 ![横向滚动文字效果](images/roll-text.gif)
 
