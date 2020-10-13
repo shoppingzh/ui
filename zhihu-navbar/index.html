@@ -9,25 +9,97 @@
     }
     nav {
       height: 50px;
-      padding: 0 20px;
+      margin: 0 auto;
       position: fixed;
       left: 0;
       right: 0;
       top: 0;
       line-height: 50px;
       background-color: #fff;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+      overflow: hidden;
     }
     section {
       height: 3000px;
+    }
+    .nav-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: absolute;
+      left: 20%;
+      right: 20%;
+      top: 0;
+      background-color: #fff;
+      transition: transform .3s;
+    }
+
+    .nav-main--hide {
+      transform: translateY(-100%);
+    }
+
+    .nav-menu {
+      display: inline-block;
+    }
+
+    .nav-menu:after {
+      content: "";
+      display: table;
+      visibility: hidden;
+      clear: both;
+    }
+
+    .nav-menu-item {
+      float: left;
+      padding: 0 12px;
+      color: #8590a6;
+      font-size: 15px;
+    }
+
+    .article-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .btn {
+      appearance: none;
+      -webkit-appearance: none;
+      margin: 0 5px;
+      padding: 0 12px;
+      color: #fff;
+      line-height: 32px;
+      outline: none;
+      background-color: #0084ff;
+      border: 1px solid #0084ff;
+      border-radius: 3px;
+    }
+    .btn--plain {
+      background-color: #fff;
+      color: #0084ff;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div id="nav-1">我是导航信息</div>
-    <div id="nav-2">我是文章标题</div>
+    <div id="nav-1" class="nav-main">
+      <div class="nav-menu">
+        <div class="nav-menu-item">首页</div>
+        <div class="nav-menu-item">发现</div>
+        <div class="nav-menu-item">等你来答</div>
+      </div>
+      <div>
+        <button class="btn btn--plain">登录</button>
+        <button class="btn">加入知乎</button>
+      </div>
+    </div>
+    <div id="nav-2" class="nav-main">
+      <div class="article-title">webpack到底怎么用？</div>
+      <div>
+        <button class="btn">关注问题</button>
+        <button class="btn btn--plain">写回答</button>
+      </div>
+    </div>
   </nav>
   <section></section>
   

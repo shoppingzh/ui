@@ -53,6 +53,9 @@
 
 ## 其它
 
+#### 知乎导航栏切换效果
+![知乎导航栏切换效果](images/zhihu-navbar.gif)
+
 #### 京东商品详情
 ![京东商品详情](images/goods-preview.gif)
 
