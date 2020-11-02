@@ -53,6 +53,9 @@
 
 ## 其它
 
+#### 登录二维码角效果
+![ 登录二维码角效果](images/corner-qrcode.png)
+
 #### 知乎导航栏切换效果
 ![知乎导航栏切换效果](images/zhihu-navbar.gif)
 

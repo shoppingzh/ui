@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .login-card {
+      width: 300px;
+      height: 400px;
+      border: 1px solid #ccc;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .login-card__corner {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .login-card__corner img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+    .login-card__corner:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      background-color: transparent;
+      border: 100px solid transparent;
+      border-left: 100px solid #fff;
+    }
+    .login-card__corner--hover:after {
+      transition: opacity .5s;
+      opacity: 0;
+    }
+    .login-card__inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <div class="login-card__corner">
+      <img src="./qrcode.jpg">
+    </div>
+    <div class="login-card__inner">鼠标放在二维码上试试！</div>
+  </div>
+
+  <script>
+    var el = document.querySelector('.login-card__corner')
+    el.addEventListener('mouseenter', function() {
+      el.classList.add('login-card__corner--hover')
+    })
+    el.addEventListener('mouseout', function() {
+      el.classList.remove('login-card__corner--hover')
+    })
+  </script>
+  
+</body>
+</html>
