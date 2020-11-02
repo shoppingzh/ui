@@ -56,6 +56,9 @@
 #### 登录二维码角效果
 ![ 登录二维码角效果](images/corner-qrcode.png)
 
+#### 图片平均色计算器
+![图片平均色计算器](images/image-avg-color.png)
+
 #### 知乎导航栏切换效果
 ![知乎导航栏切换效果](images/zhihu-navbar.gif)
 
