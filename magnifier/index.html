@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="capture">哈哈哈</div>
+  <script src="./html2canvas.min.js"></script>
+  <script>
+    html2canvas(document.querySelector("#capture")).then(canvas => {
+        document.body.appendChild(canvas)
+    });
+  </script>
+  
+</body>
+</html>
