@@ -27,17 +27,22 @@
       document.body.appendChild(this.el)
     },
     init: function() {
+      this.pixelRatio = window.devicePixelRatio <= 1 ? 2 : window.devicePixelRatio
       this.loadCanvas().then(canvas => {
         this.createElement()
         canvas.toBlob(blob => {
           var url = URL.createObjectURL(blob)
           var img = new Image()
           img.src = url
+          if (this.pixelRatio <= 1) {
+            img.width = canvas.width * 2
+            img.height = canvas.height * 2
+          }
           this.el.appendChild(img)
           this.layer = img
           document.body.addEventListener('mousemove', throttle(e => {
-            var offsetX = -e.x * 2 + this.el.clientWidth / 2
-            var offsetY = -e.y * 2 + this.el.clientHeight / 2
+            var offsetX = -e.x * this.pixelRatio + this.el.clientWidth / 2
+            var offsetY = -e.y * this.pixelRatio + this.el.clientHeight / 2
             css(this.layer, {
               transform: `translate(${offsetX}px, ${offsetY}px)`
             })
