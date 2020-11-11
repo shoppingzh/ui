@@ -34,7 +34,7 @@
           var url = URL.createObjectURL(blob)
           var img = new Image()
           img.src = url
-          if (this.pixelRatio <= 1) {
+          if (window.devicePixelRatio <= 1) {
             img.width = canvas.width * 2
             img.height = canvas.height * 2
           }
