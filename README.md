@@ -53,6 +53,9 @@
 
 ## 其它
 
+#### 网页放大镜
+![网页放大镜](images/magnifier.gif)
+
 #### 登录二维码角效果
 ![ 登录二维码角效果](images/corner-qrcode.png)
 
