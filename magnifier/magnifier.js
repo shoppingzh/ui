@@ -2,12 +2,15 @@
 
   function Magnifier() {
     this.container = document.body
+    this.scale = 2
     this.init()
   }
 
   Magnifier.prototype = {
     loadCanvas: function() {
-      return html2canvas(this.container).then(canvas => {
+      return html2canvas(this.container, {
+        scale: this.scale
+      }).then(canvas => {
         this.canvas = canvas
         return canvas
       })
@@ -27,22 +30,17 @@
       document.body.appendChild(this.el)
     },
     init: function() {
-      this.pixelRatio = window.devicePixelRatio <= 1 ? 2 : window.devicePixelRatio
       this.loadCanvas().then(canvas => {
         this.createElement()
         canvas.toBlob(blob => {
           var url = URL.createObjectURL(blob)
           var img = new Image()
           img.src = url
-          if (window.devicePixelRatio <= 1) {
-            img.width = canvas.width * 2
-            img.height = canvas.height * 2
-          }
           this.el.appendChild(img)
           this.layer = img
           document.body.addEventListener('mousemove', throttle(e => {
-            var offsetX = -e.x * this.pixelRatio + this.el.clientWidth / 2
-            var offsetY = -e.y * this.pixelRatio + this.el.clientHeight / 2
+            var offsetX = -e.x * this.scale + this.el.clientWidth / 2
+            var offsetY = -e.y * this.scale + this.el.clientHeight / 2
             css(this.layer, {
               transform: `translate(${offsetX}px, ${offsetY}px)`
             })
