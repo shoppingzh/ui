@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body, .phone{
+      margin: 0;
+      height: 100%;
+    }
+    .phone {
+      background-color: lightcoral;
+    }
+    
+    .video {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background-color: #fff;
+    }
+    .video__inner {
+      flex: 4;
+      overflow: hidden;
+    }
+    .video__inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video__other {
+      flex: 8;
+      background-color: #fff;
+    }
+    .video__overlay {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .75);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone">
+    <div class="video">
+      <div class="video__inner">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605434067612&di=072f7b770eb7bd1b33212edc5599d016&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1308%2F29%2Fc0%2F25038622_1377746019192.jpg">
+      </div>
+      <div class="video__other"></div>
+      <div class="video__overlay"></div>
+    </div>
+  </div>
+
+  <script src="./video.js"></script>
+  <script>
+    new YoutubeVideo(document.querySelector('.video'))
+  </script>
+  
+</body>
+</html>
